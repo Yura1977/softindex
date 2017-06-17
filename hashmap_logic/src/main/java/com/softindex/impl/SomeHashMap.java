@@ -1,5 +1,6 @@
 package com.softindex.impl;
 
+import com.google.gson.Gson;
 import com.softindex.SomeHash;
 import com.softindex.SomeMap;
 import org.apache.log4j.Logger;
@@ -107,6 +108,7 @@ public class SomeHashMap<K,V>  extends SomeHash implements SomeMap<K,V>, Cloneab
         }
         sb.append("]");
         return sb.toString();
+//        return new Gson().toJson(entries);
     }
 
 
