@@ -15,27 +15,6 @@ public class SomeHashMapTest {
     }
 
     /**
-     * test Put.Add (Valid)
-     */
-    @Test
-    public void testPutAddValid(){
-        Assert.assertEquals("1,100", hashMap.put(1, 100), 100);
-        Assert.assertEquals("11,102", hashMap.put(11, 102), 102);
-        Assert.assertEquals("2,200", hashMap.put(2, 200), 200);
-        Assert.assertEquals("3,300", hashMap.put(3, 300), 300);
-        Assert.assertEquals("77,707", hashMap.put(77, 707), 707);
-    }
-
-    /**
-     * test Put.Update
-     */
-    @Test
-    public void testPutUpdate(){
-        Assert.assertEquals("1,100", hashMap.put(1, 100), 100);
-        Assert.assertEquals("1,101", hashMap.put(1, 101), 101);
-    }
-
-    /**
      * test GetIsFound
      */
     @Test

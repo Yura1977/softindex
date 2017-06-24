@@ -1,9 +1,5 @@
 package com.softindex;
 
-import com.google.gson.Gson;
-
-import java.util.Arrays;
-
 /**
  * Простой пример хэш-таблицы. Хеш-таблица имеет постоянный размер для хранения 16 элементов
  * Конфликты хеш-функции решаются с помощью стратегия открытой адресации. Хэш-функция использует остаток деления на 16.
@@ -29,8 +25,8 @@ public class SomeHashMap {
         }
     }
 
-    public long put(int key, long value){
-        int hash = (key % DEFAULT_CAPACITY);
+    public void put(int key, long value){
+        int hash = key % DEFAULT_CAPACITY;
 
         while (entries[hash]!=null
                 && entries[hash].getKey()!=key)
@@ -39,12 +35,10 @@ public class SomeHashMap {
         }
         entries[hash] = new Entry(key, value);
         ++size;
-
-        return entries[hash].getValue();
     }
 
     public long get(int key) {
-        int hash = (key % DEFAULT_CAPACITY);
+        int hash = key % DEFAULT_CAPACITY;
 
         while (entries[hash]!=null
                 && entries[hash].getKey()!=key)
@@ -53,11 +47,8 @@ public class SomeHashMap {
         }
 
         if (entries[hash] == null)
-        {
             return -1;
-        } else {
-            return entries[hash].getValue();
-        }
+        return entries[hash].getValue();
     }
 
     public int size() {
